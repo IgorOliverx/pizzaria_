@@ -125,6 +125,7 @@
       <path value="$PROJECT_DIR$/pizzaria/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/pizzaria/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/pizzaria/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/pizzaria/vendor/lucascudo/laravel-pt-br-localization" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

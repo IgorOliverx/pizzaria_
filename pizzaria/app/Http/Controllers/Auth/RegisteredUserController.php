@@ -33,6 +33,8 @@ class RegisteredUserController extends Controller
         //valida os dados que chegam na requisição e aplica regras
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
+            'cpf' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
@@ -40,6 +42,8 @@ class RegisteredUserController extends Controller
         //caso passado pelas regras, cria um novo usuario
         $user = User::create([
             'name' => $request->name,
+            'username' => $request->username,
+            'cpf' => $request->cpf,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);

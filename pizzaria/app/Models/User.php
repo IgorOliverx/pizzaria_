@@ -2,23 +2,25 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail; //essa interface faz a verificação por email
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
-     * Atributos que serão preenchidos pelo usuário
+     * Atributos que serão preenchidos pelo usuário e que eu quero que salve no banco de dados
      *
      * @var array<int, string>
      */
     protected $fillable = [
         'name',
+        'username',
+        'cpf',
         'email',
         'password',
     ];
